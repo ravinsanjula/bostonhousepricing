@@ -1,51 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Store</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <h1>Product Store</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+ <div class="login">
+	<h1>Boston House Price Prediction</h1>
 
-    <section class="hero">
-        <div class="container">
-            <h2>Welcome to our Product Store</h2>
-            <p>Discover our wide range of products for all your needs.</p>
-            <a href="#" class="btn">Shop Now</a>
-        </div>
-    </section>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="CRIM" placeholder="CRIM" required="required" /><br>
+    	<input type="text" name="ZN" placeholder="ZN" required="required" /><br>
+        <input type="text" name="INDUS" placeholder="INDUS" required="required" /><br>
+        <input type="text" name="CHAS" placeholder="CHAS" required="required" /><br>
+        <input type="text" name="NOX" placeholder="NOX" required="required" /><br>
+        <input type="text" name="RM" placeholder="RM" required="required" /><br>
+        <input type="text" name="Age" placeholder="Age" required="required" /><br>
+        <input type="text" name="DIS" placeholder="DIS" required="required" /><br>
+        <input type="text" name="RAD" placeholder="RAD" required="required" /><br>
+        <input type="text" name="TAX" placeholder="TAX" required="required" /><br>
+        <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" /><br>
+        <input type="text" name="B" placeholder="B" required="required" /><br>
+        <input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br>
 
-    <section class="products">
-        <div class="container">
-            <h2>Featured Products</h2>
-            <div class="product">
-                <img src="product1.jpg" alt="Product 1">
-                <h3>Product Name</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <a href="#" class="btn">View Details</a>
-            </div>
-            <!-- Repeat product div for each product -->
-        </div>
-    </section>
+       
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Product Store. All rights reserved.</p>
-        </div>
-    </footer>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
 </body>
 </html>
